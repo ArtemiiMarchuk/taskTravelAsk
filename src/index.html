@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="hotel">
+    <div class="hotel__rightBlock">
+        <div class="hotel__toggleBlock">
+            <p>Поиск по странам и городам</p>
+            <span></span>
+            <div class="hotel__relative">
+                <input id="searchCountry" class="hotel__input" placeholder="Введите страну, например, Россия" type="text">
+            </div>
+        </div>
+        <div class="hotel__toggleBlock">
+            <p>Звезды</p>
+            <span></span>
+            <div>
+                <div class="hotel__checkboxesWrapper" data-selected="">
+                    <input type="checkbox" id="noStar" value="0">
+                    <label for="noStar">Без звезд</label><br>
+                    <input type="checkbox" id="star1" value="1">
+                    <label for="star1">1 звезда</label><br>
+                    <input type="checkbox" id="star2" value="2">
+                    <label for="star2">2 звезды</label><br>
+                    <input type="checkbox" id="star3" value="3">
+                    <label for="star3">3 звезды</label><br>
+                    <input type="checkbox" id="star4" value="4">
+                    <label for="star4">4 звезды</label><br>
+                    <input type="checkbox" id="star5" value="5">
+                    <label for="star5">5 звезд</label>
+                </div>
+            </div>
+        </div>
+        <div class="hotel__toggleBlock">
+            <p>Тип</p>
+            <span></span>
+            <div>
+                <div class="hotel__selectType">
+                    <button value="Отель">Отели</button>
+                    <button value="Апартаменты">Апартаменты</button>
+                </div>
+            </div>
+        </div>
+        <div class="hotel__toggleBlock">
+            <p>Цена</p>
+            <span></span>
+            <div>
+                <div class="hotel__priceSlider"></div>
+            </div>
+        </div>
+        <div class="hotel__clearSelectors">
+            <span></span>
+            <p>Сбросить все фильтры</p>
+        </div>
+    </div>
+
+    <div class="hotel__leftBlock">
+        <div class="hotel__postsWrapper"></div>
+        <div class="hotel__showMorePosts">Показать еще отели</div>
+    </div>
+</div>
+
+</body>
+</html>

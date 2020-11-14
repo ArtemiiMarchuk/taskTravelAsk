@@ -1,0 +1,317 @@
+.hotel {
+  width: 100%;
+  max-width: 1279px;
+  margin: 56px auto 0 auto;
+  padding: 0 10px;
+  display: flex;
+
+  &__rightBlock {
+    max-width: 300px;
+    width: 100%;
+    margin-right: 21px;
+  }
+
+  &__leftBlock {
+    width: 100%;
+  }
+
+
+  &__toggleBlock {
+    width: 100%;
+    position: relative;
+    border: 1px solid rgba(243, 239, 234, 1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    & > p {
+      @include makeFont(15px, rgba(0, 0, 0, 1), left, none, 500, 17px);
+      padding: 24px 21px;
+      cursor: pointer;
+      border-bottom: 1px solid rgb(255, 255, 255);
+      transition: .3s;
+    }
+
+    & > span {
+      position: absolute;
+      top: 29px;
+      right: 21px;
+      transform: rotate(180deg);
+      cursor: pointer;
+      transition: .3s;
+      background-image: url("../images/toggleIcon.svg");
+      width: 9px;
+      height: 6px;
+      background-size: cover;
+    }
+
+    & > div {
+      padding: 30px 21px;
+      display: none;
+    }
+
+    &-active {
+      & > span {
+        transform: none;
+      }
+
+      & > p {
+        border-bottom-color: rgba(243, 239, 234, 1);
+      }
+    }
+  }
+
+  &__relative {
+    position: relative;
+  }
+
+  &__input {
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(213, 205, 190, 1);
+    border-radius: 2px;
+    padding: 0 15px;
+
+    @include makeFont(15px, rgba(0, 0, 0, 1), left, none, 400, 12px);
+
+    &-error {
+      border-color: red;
+    }
+  }
+
+  &__inputSearchResults {
+    position: absolute;
+    max-height: 190px;
+    overflow-y: auto;
+    padding: 25px 30px 11px 30px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+    z-index: 200;
+    background: #fff;
+
+    & > p {
+      @include makeFont(15px, rgba(0, 0, 0, 1), left, none, 400, 20px);
+      margin-bottom: 17px;
+      cursor: pointer;
+    }
+  }
+
+  &__checkboxesWrapper {
+    & > input {
+      margin-bottom: 30px;
+      margin-right: 15px;
+
+      &::before {
+        content: '';
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        background: #fff;
+        border: 2px solid rgba(213, 205, 190, 1);
+        border-radius: 2px;
+        transition: .2s;
+        cursor: pointer;
+      }
+
+      &:checked::before {
+        background-color: rgba(255, 70, 65, 1);
+        border-color: rgba(255, 70, 65, 1);
+        background-repeat: no-repeat;
+        background-size: 70%;
+        background-position: center center;
+        background-image: url('data:image/svg+xml;utf8,<svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.08575 0.828386C9.39816 0.515963 9.90469 0.515964 10.2171 0.828387V0.828387C10.5295 1.14081 10.5295 1.64735 10.2171 1.95977L4.56029 7.61668C4.24787 7.9291 3.74134 7.9291 3.42892 7.61668V7.61668C3.1165 7.30426 3.1165 6.79772 3.42892 6.4853L9.08575 0.828386Z" fill="white"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M1.16589 4.22241C1.4783 3.91 1.98483 3.91 2.29725 4.22241L4.55997 6.48511C4.87239 6.79752 4.87239 7.30404 4.55997 7.61646V7.61646C4.24756 7.92887 3.74103 7.92887 3.42861 7.61645L1.16589 5.35376C0.853469 5.04135 0.853469 4.53483 1.16589 4.22241V4.22241Z" fill="white"/></svg>');
+      }
+    }
+
+    & > label {
+      @include makeFont(15px, rgba(0, 0, 0, 1), left, none, 400, 1);
+      position: relative;
+      top: 2px;
+    }
+  }
+
+  &__selectType {
+    & > button {
+      border: none;
+      outline: none;
+      box-shadow: none;
+      padding: 14px 15px;
+      margin-right: 8px;
+      border-radius: 50px;
+      cursor: pointer;
+      background: rgba(249, 247, 242, 1);
+      transition: .3s;
+      @include makeFont(15px, rgba(0, 0, 0, 1), center, none, 400, 12px);
+
+      &.hotel__selectType-selected {
+        background: rgba(253, 226, 131, 1);
+      }
+    }
+  }
+
+  &__post {
+    display: flex;
+    margin-bottom: 28px;
+    position: relative;
+  }
+
+  &__img {
+    width: 280px;
+    height: auto;
+    border-radius: 2px;
+    margin-right: 23px;
+  }
+
+  &__postLocation {
+    @include makeFont(13px, rgba(81, 81, 81, 1), left, none, 400, 1);
+    margin-bottom: 6px;
+  }
+
+  &__title {
+    @include makeFont(21px, rgba(0, 0, 0, 1), left, none, 500, 1);
+    margin-bottom: 15px;
+  }
+
+  &__star {
+    width: 12px;
+    height: 12px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../images/star.svg');
+    display: inline-block;
+    margin-right: 4px;
+  }
+
+  &__starLabel {
+    @include makeFont(13px, rgba(0, 0, 0, 1), left, none, 500, 1);
+    display: inline-block;
+    margin: 0 7px 16px 4px;
+  }
+
+  &__type {
+    @include makeFont(13px, rgba(81, 81, 81, 1), left, none, 500, 1);
+    padding: 3px 8px;
+    border: 1px solid rgba(212, 212, 212, 1);
+    display: inline-block;
+    border-radius: 2px;
+    position: relative;
+    top: 1px;
+  }
+
+  &__postContent {
+    width: 100%;
+  }
+
+  &__description {
+    @include makeFont(14px, rgba(0, 0, 0, 1), left, none, 400, 20px);
+    margin-right: 13px;
+  }
+
+  &__feedBack {
+    padding: 25px 20px;
+    background: rgba(249, 247, 242, 1);
+    min-width: 222px;
+  }
+
+  &__ratingStar {
+    background-image: url('../images/ratingStar.svg');
+    width: 12px;
+    height: 12px;
+    background-size: cover;
+    display: inline-block;
+    margin-right: 3px;
+  }
+
+  &__ratingNumber {
+    @include makeFont(14px, rgba(0, 0, 0, 1), left, none, 500, 1);
+    display: inline-block;
+  }
+
+  &__dot {
+    width: 2px;
+    height: 2px;
+    background: rgba(183, 178, 168, 1);
+    display: inline-block;
+    margin: 0 7px;
+    position: relative;
+    top: -3px;
+  }
+
+  &__review {
+    margin-top: 18px;
+    @include makeFont(13px, rgba(81, 81, 81, 1), left, none, 400, 17px);
+  }
+
+  &__noreviewText {
+    @include makeFont(14px, rgba(149, 149, 149, 1), left, none, 400, 17px);
+  }
+
+  &__book {
+    height: 50px;
+    background: rgba(255, 70, 65, 1);
+    width: 140px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include makeFont(14px, rgba(255, 255, 255, 1), center, none, 500, 1);
+    transition: .3s;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    &:hover {
+      background: rgb(255, 43, 38);
+    }
+  }
+
+  &__price {
+    position: absolute;
+    bottom: 15px;
+    @include makeFont(17px, rgba(0, 0, 0, 1), left, none, 500, 1);
+  }
+
+  &__clearSelectors {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+    & > span {
+      margin-right: 7px;
+      transition: .3s;
+      cursor: pointer;
+      background-image: url("../images/clearSelectors.svg");
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+
+      &:hover {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__showMorePosts {
+    margin: 4px auto 85px auto;
+    height: 50px;
+    width: 189px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(240, 234, 222, 1);
+    border-radius: 2px;
+    cursor: pointer;
+    @include makeFont(15px, rgba(0, 0, 0, 1), center, none, 500, 1);
+  }
+
+  &__postLine {
+    width: 100%;
+    height: 1px;
+    background: rgba(243, 239, 234, 1);
+    margin-bottom: 30px;
+  }
+}
+
+
